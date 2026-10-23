@@ -2,69 +2,88 @@
 
 ## 📌 About the Project
 
-This repository contains my Web Foundation assignments created as part of my learning journey in Web Development.
+This repository contains my Web Foundation assignments completed during my Web Development learning journey.
 
-The assignments focus on HTML fundamentals and demonstrate how to create structured web pages, portfolios, tables, and forms using HTML.
+I have organized my work into different modules and days. These assignments help me practice HTML, CSS, page layouts, and responsive web design.
 
-## 🎯 Objectives
+## 🎯 Learning Objectives
 
-* Understand the fundamentals of HTML.
-* Learn how to structure web pages.
-* Create a personal resume and portfolio.
-* Understand semantic HTML elements.
-* Design tables and forms using HTML.
-* Practice basic web development concepts.
+* Learn HTML fundamentals.
+* Understand CSS styling and layouts.
+* Create resume and profile card pages.
+* Design landing pages.
+* Build responsive navigation layouts.
+* Create login pages and product listings.
+* Practice CSS Grid, Flexbox, and the Box Model.
+* Improve my practical web development skills.
 
-## 📚 Assignments Included
+## 📚 Assignments
 
-| Assignment | Description                               |
-| ---------- | ----------------------------------------- |
-| Q1         | Basic HTML Page with Title and Headings   |
-| Q2         | Resume Page Using Text Elements           |
-| Q3         | Portfolio Page with Navigation and Images |
-| Q4         | Portfolio Using Semantic HTML Tags        |
-| Q5         | About Me Project                          |
-| Q6         | Structured College Information Page       |
-| Q7         | E-Commerce Product Specification Table    |
-| Q8         | Student Registration Form                 |
-| Q9         | Professional Job Application Form         |
+### 📁 Module 1 — HTML Fundamentals
 
-## 🛠️ Technologies Used
+| File         | Description                               |
+| ------------ | ----------------------------------------- |
+| `ques1.html` | Basic HTML Page                           |
+| `ques2.html` | Resume Page Using HTML                    |
+| `ques3.html` | Portfolio Page with Navigation and Images |
+| `ques4.html` | Portfolio Using Semantic HTML             |
+| `ques5.html` | About Me Page                             |
+| `ques6.html` | College Information Page                  |
+| `ques7.html` | E-Commerce Product Table                  |
+| `ques8.html` | Student Registration Form                 |
+| `ques9.html` | Job Application Form                      |
 
-* **HTML5** — For creating and structuring web pages.
+### 📁 Module 2 — Day 1
+
+| File           | Description                |
+| -------------- | -------------------------- |
+| `index.html`   | HTML and CSS Practice Page |
+| `resume.html`  | Styled Resume Page         |
+| `resume.css`   | Resume Styling             |
+| `card.html`    | Profile Card Project       |
+| `card.css`     | Profile Card Styling       |
+| `landing.html` | Landing Page               |
+| `landing.css`  | Landing Page Styling       |
+| `style.css`    | General Page Styling       |
+
+### 📁 Module 2 — Day 2
+
+| File              | Description                |
+| ----------------- | -------------------------- |
+| `index.html`      | HTML and CSS Practice Page |
+| `login.html`      | Centered Login Page        |
+| `login.css`       | Login Page Styling         |
+| `product.html`    | Product Listing Layout     |
+| `product.css`     | Product Listing Styling    |
+| `responsive.html` | Responsive Navigation Menu |
+| `responsive.css`  | Responsive Menu Styling    |
+| `style.css`       | General Page Styling       |
+
+## 🛠️ Technologies and Tools
+
+* **HTML5** — To create the structure of web pages.
+* **CSS3** — To style web pages and create layouts.
+* **CSS Grid** — To arrange content in rows and columns.
+* **Flexbox** — To align and arrange page elements.
+* **Media Queries** — To make layouts responsive.
 * **Visual Studio Code** — Code editor.
-* **Live Server** — For running and previewing HTML pages in the browser.
+* **Live Server** — To preview web pages in the browser.
 * **Git & GitHub** — For version control and project hosting.
 
-## 🚀 How to Run the Project
+## 🚀 How to Run the Projects
 
 1. Clone or download this repository.
 2. Open the project folder in Visual Studio Code.
-3. Open any assignment file, such as `ques1.html`.
-4. Right-click the file and select **Open with Live Server**.
-5. View the webpage in your browser.
-
-## 📁 Project Structure
-
-```text
-Web_Foundattion_Assingment/
-│
-├── ques1.html
-├── ques2.html
-├── ques3.html
-├── ques4.html
-├── ques5.html
-├── ques6.html
-├── ques7.html
-├── ques8.html
-├── ques9.html
-│
-└── README.md
-```
+3. Open the required module and day folder.
+4. Open the HTML file you want to run.
+5. Right-click the file and select **Open with Live Server**.
+6. The webpage will open in your browser.
 
 ## 📖 Learning Outcomes
 
-Through these assignments, I am developing my understanding of HTML elements, semantic page structure, navigation links, tables, forms, and basic website development.
+By working on these assignments, I am developing my understanding of HTML, CSS, semantic elements, forms, tables, page layouts, and responsive web design.
+
+These projects help me improve my coding skills through practical implementation.
 
 ## 👩‍💻 Author
 
@@ -72,8 +91,8 @@ Through these assignments, I am developing my understanding of HTML elements, se
 
 BCA (Artificial Intelligence) Student
 
-GitHub: [Visit My GitHub Profile](https://github.com/muskan-gupta01)
+🔗 [Visit My GitHub Profile](https://github.com/muskan-gupta01)
 
 ---
 
-⭐ This repository represents my practice and progress in learning Web Development.
+⭐ This repository showcases my learning journey and practical work in Web Development.
