@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="assignment9.css">
+    <script src="assignment9.js" defer></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Student Hub</h2>
+
+            <nav>
+                <a href="#dashboard" class="active" data-page="dashboard">Dashboard</a>
+                <a href="#courses" data-page="courses">Courses</a>
+                <a href="#assignments" data-page="assignments">Assignments</a>
+                <a href="#profile" data-page="profile">My Profile</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Dashboard Page -->
+            <section class="page" id="dashboard">
+
+                <header class="topbar">
+                    <div>
+                        <h1>Student Dashboard</h1>
+                        <p>Welcome back! Here is your learning overview.</p>
+                    </div>
+
+                    <div class="profile-name">Muskan Gupta</div>
+                </header>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <p>Total Students</p>
+                        <h2>120</h2>
+                    </div>
+
+                    <div class="card">
+                        <p>My Courses</p>
+                        <h2>6</h2>
+                    </div>
+
+                    <div class="card">
+                        <p>Completed Tasks</p>
+                        <h2>18</h2>
+                    </div>
+
+                </div>
+
+                <div class="assignments">
+                    <h2>Recent Assignments</h2>
+
+                    <div class="table-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Assignment</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>HTML Basics</td>
+                                    <td>28 Oct 2026</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>CSS Profile Card</td>
+                                    <td>29 Oct 2026</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Landing Page</td>
+                                    <td>30 Oct 2026</td>
+                                    <td><span class="status progress">In Progress</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Dashboard Layout</td>
+                                    <td>31 Oct 2026</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Courses Page -->
+            <section class="page" id="courses" hidden>
+
+                <header class="page-heading">
+                    <h1>My Courses</h1>
+                    <p>Explore the subjects you are learning.</p>
+                </header>
+
+                <div class="cards">
+
+                    <div class="card course-card">
+                        <div class="course-icon">H</div>
+                        <h2>HTML</h2>
+                        <p>Learn webpage structure and basic elements.</p>
+                        <span class="status completed">Enrolled</span>
+                    </div>
+
+                    <div class="card course-card">
+                        <div class="course-icon">C</div>
+                        <h2>CSS</h2>
+                        <p>Learn styling, layouts and responsive design.</p>
+                        <span class="status completed">Enrolled</span>
+                    </div>
+
+                    <div class="card course-card">
+                        <div class="course-icon">J</div>
+                        <h2>JavaScript</h2>
+                        <p>Learn programming and webpage interactivity.</p>
+                        <span class="status progress">Learning</span>
+                    </div>
+
+                    <div class="card course-card">
+                        <div class="course-icon">P</div>
+                        <h2>Python</h2>
+                        <p>Learn programming and problem-solving.</p>
+                        <span class="status completed">Enrolled</span>
+                    </div>
+
+                    <div class="card course-card">
+                        <div class="course-icon">M</div>
+                        <h2>Machine Learning</h2>
+                        <p>Explore data and machine learning models.</p>
+                        <span class="status progress">Learning</span>
+                    </div>
+
+                    <div class="card course-card">
+                        <div class="course-icon">D</div>
+                        <h2>Data Analysis</h2>
+                        <p>Understand data and find useful information.</p>
+                        <span class="status pending">Upcoming</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Assignments Page -->
+            <section class="page" id="assignments" hidden>
+
+                <header class="page-heading">
+                    <h1>My Assignments</h1>
+                    <p>Track your assignment progress.</p>
+                </header>
+
+                <div class="assignments">
+                    <div class="table-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Assignment</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>HTML Basics</td>
+                                    <td>28 Oct 2026</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>CSS Profile Card</td>
+                                    <td>29 Oct 2026</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Landing Page</td>
+                                    <td>30 Oct 2026</td>
+                                    <td><span class="status progress">In Progress</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Dashboard Layout</td>
+                                    <td>31 Oct 2026</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- My Profile Page -->
+            <section class="page" id="profile" hidden>
+
+                <header class="page-heading">
+                    <h1>My Profile</h1>
+                    <p>Your personal and academic details.</p>
+                </header>
+
+                <div class="profile-card">
+
+                    <div class="avatar">M</div>
+
+                    <h2>Muskan Gupta</h2>
+                    <p class="profile-course">BCA (Artificial Intelligence)</p>
+
+                    <div class="profile-details">
+                        <p><strong>Course:</strong> BCA (Artificial Intelligence)</p>
+                        <p><strong>University:</strong> Invertis University</p>
+                        <p><strong>City:</strong> Bareilly, Uttar Pradesh</p>
+                        <p><strong>Skills:</strong> HTML, CSS, Python, Machine Learning</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
