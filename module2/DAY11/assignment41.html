@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 41 - Dynamic List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 65%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: steelblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 12px 0;
+        }
+
+        .delete-btn {
+            background-color: crimson;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>My Learning List</h2>
+
+        <input type="text" id="itemInput" placeholder="Enter a topic">
+        <button id="addBtn">Add Item</button>
+
+        <ul id="itemList"></ul>
+    </div>
+
+    <script>
+        const itemInput = document.getElementById("itemInput");
+        const addBtn = document.getElementById("addBtn");
+        const itemList = document.getElementById("itemList");
+
+        addBtn.addEventListener("click", function() {
+
+            const itemName = itemInput.value.trim();
+
+            if (itemName === "") {
+                alert("Please enter a topic.");
+                return;
+            }
+
+            const listItem = document.createElement("li");
+
+            listItem.textContent = itemName;
+
+            const deleteBtn = document.createElement("button");
+
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "delete-btn";
+
+            deleteBtn.addEventListener("click", function() {
+                listItem.remove();
+            });
+
+            listItem.appendChild(deleteBtn);
+            itemList.appendChild(listItem);
+
+            itemInput.value = "";
+
+            console.log("New item added:", itemName);
+        });
+    </script>
+
+</body>
+</html>

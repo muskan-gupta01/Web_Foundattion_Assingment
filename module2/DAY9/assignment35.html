@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Node Relationships</title>
+</head>
+<body>
+
+    <h1 id="heading">Student Information</h1>
+
+    <div id="container">
+        <h2>Student Details</h2>
+
+        <p id="name">Name: Muskan Gupta</p>
+        <p id="course">Course: BCA Artificial Intelligence</p>
+
+        <ul id="skills">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+
+    <script>
+        // Select HTML elements
+        const container = document.getElementById("container");
+        const name = document.getElementById("name");
+        const skills = document.getElementById("skills");
+
+        console.log("DOM NODE RELATIONSHIPS");
+
+        // 1. Parent Node
+        console.log("\nParent Node:");
+        console.log(name.parentElement);
+
+        // 2. Child Nodes
+        console.log("\nChildren of Container:");
+        console.log(container.children);
+
+        // 3. First Child
+        console.log("\nFirst Child:");
+        console.log(container.firstElementChild);
+
+        // 4. Last Child
+        console.log("\nLast Child:");
+        console.log(container.lastElementChild);
+
+        // 5. Next Sibling
+        console.log("\nNext Sibling of Name:");
+        console.log(name.nextElementSibling);
+
+        // 6. Previous Sibling
+        console.log("\nPrevious Sibling of Course:");
+        console.log(document.getElementById("course").previousElementSibling);
+
+        // 7. Parent Element
+        console.log("\nParent of Skills:");
+        console.log(skills.parentElement);
+
+        // 8. Child Elements
+        console.log("\nSkills List Items:");
+        console.log(skills.children);
+
+        // 9. Number of Children
+        console.log("\nTotal Skills:");
+        console.log(skills.children.length);
+
+        // 10. Descendant Elements
+        console.log("\nAll Descendants of Container:");
+        console.log(container.querySelectorAll("*"));
+    </script>
+
+</body>
+</html>

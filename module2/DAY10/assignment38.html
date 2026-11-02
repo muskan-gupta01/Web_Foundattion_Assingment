@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Profile Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+            padding: 30px;
+        }
+
+        .profile {
+            background-color: white;
+            padding: 25px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: green;
+            color: white;
+        }
+
+        .inactive {
+            background-color: gray;
+            color: white;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+
+        .highlight {
+            border: 3px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile" id="profile">
+
+        <h1>Student Profile</h1>
+
+        <h2>Muskan Gupta</h2>
+        <p>BCA Artificial Intelligence</p>
+
+        <p id="status" aria-live="polite">Status: Active</p>
+
+        <button id="statusBtn" aria-pressed="true">
+            Change Status
+        </button>
+
+        <button id="themeBtn" aria-pressed="false">
+            Toggle Dark Mode
+        </button>
+
+        <button id="highlightBtn" aria-pressed="false">
+            Highlight Profile
+        </button>
+
+        <p id="message" aria-live="polite"></p>
+
+    </div>
+
+    <script>
+        const profile = document.getElementById("profile");
+
+        const status = document.getElementById("status");
+        const statusBtn = document.getElementById("statusBtn");
+        const themeBtn = document.getElementById("themeBtn");
+        const highlightBtn = document.getElementById("highlightBtn");
+        const message = document.getElementById("message");
+
+        // Change active and inactive status
+        statusBtn.addEventListener("click", function() {
+
+            const isActive = statusBtn.getAttribute("aria-pressed") === "true";
+
+            if (isActive) {
+                status.textContent = "Status: Inactive";
+                status.classList.remove("active");
+                status.classList.add("inactive");
+                statusBtn.setAttribute("aria-pressed", "false");
+            } else {
+                status.textContent = "Status: Active";
+                status.classList.remove("inactive");
+                status.classList.add("active");
+                statusBtn.setAttribute("aria-pressed", "true");
+            }
+        });
+
+        // Toggle dark mode
+        themeBtn.addEventListener("click", function() {
+
+            profile.classList.toggle("dark-mode");
+
+            const isDark = profile.classList.contains("dark-mode");
+
+            themeBtn.setAttribute("aria-pressed", String(isDark));
+            message.textContent = isDark ? "Dark mode enabled" : "Dark mode disabled";
+        });
+
+        // Highlight profile
+        highlightBtn.addEventListener("click", function() {
+
+            profile.classList.toggle("highlight");
+
+            const isHighlighted = profile.classList.contains("highlight");
+
+            highlightBtn.setAttribute("aria-pressed", String(isHighlighted));
+        });
+    </script>
+
+</body>
+</html>

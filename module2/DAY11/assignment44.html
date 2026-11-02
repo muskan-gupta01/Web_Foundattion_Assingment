@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 44 - To-Do App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 65%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 9px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: steelblue;
+            color: white;
+            margin: 3px;
+        }
+
+        .filters {
+            margin: 20px 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .delete-btn {
+            background-color: crimson;
+        }
+
+        .edit-btn {
+            background-color: orange;
+        }
+
+        .complete-btn {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>My To-Do App</h2>
+
+        <input type="text" id="taskInput" placeholder="Enter your task">
+        <button id="addBtn">Add Task</button>
+
+        <div class="filters">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('pending')">Pending</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script>
+        const taskInput = document.getElementById("taskInput");
+        const addBtn = document.getElementById("addBtn");
+        const taskList = document.getElementById("taskList");
+
+        let tasks = [];
+        let currentFilter = "all";
+        let editId = null;
+
+        // Add or Update Task
+        addBtn.addEventListener("click", function() {
+
+            const taskName = taskInput.value.trim();
+
+            if (taskName === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            if (editId !== null) {
+                const task = tasks.find(item => item.id === editId);
+                task.name = taskName;
+                editId = null;
+                addBtn.textContent = "Add Task";
+            } else {
+                tasks.push({
+                    id: Date.now(),
+                    name: taskName,
+                    completed: false
+                });
+            }
+
+            taskInput.value = "";
+            displayTasks();
+        });
+
+        // Display Tasks
+        function displayTasks() {
+
+            taskList.innerHTML = "";
+
+            let filteredTasks = tasks;
+
+            if (currentFilter === "pending") {
+                filteredTasks = tasks.filter(task => !task.completed);
+            }
+
+            if (currentFilter === "completed") {
+                filteredTasks = tasks.filter(task => task.completed);
+            }
+
+            filteredTasks.forEach(function(task) {
+
+                const li = document.createElement("li");
+
+                const span = document.createElement("span");
+                span.textContent = task.name;
+
+                if (task.completed) {
+                    span.classList.add("completed");
+                }
+
+                // Complete Button
+                const completeBtn = document.createElement("button");
+                completeBtn.textContent = task.completed ? "Undo" : "Complete";
+                completeBtn.className = "complete-btn";
+
+                completeBtn.addEventListener("click", function() {
+                    task.completed = !task.completed;
+                    displayTasks();
+                });
+
+                // Edit Button
+                const editBtn = document.createElement("button");
+                editBtn.textContent = "Edit";
+                editBtn.className = "edit-btn";
+
+                editBtn.addEventListener("click", function() {
+                    taskInput.value = task.name;
+                    editId = task.id;
+                    addBtn.textContent = "Update Task";
+                    taskInput.focus();
+                });
+
+                // Delete Button
+                const deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "Delete";
+                deleteBtn.className = "delete-btn";
+
+                deleteBtn.addEventListener("click", function() {
+                    tasks = tasks.filter(item => item.id !== task.id);
+                    displayTasks();
+                });
+
+                const actions = document.createElement("div");
+
+                actions.appendChild(completeBtn);
+                actions.appendChild(editBtn);
+                actions.appendChild(deleteBtn);
+
+                li.appendChild(span);
+                li.appendChild(actions);
+
+                taskList.appendChild(li);
+            });
+
+            console.log("Current Tasks:", tasks);
+        }
+
+        // Filter Tasks
+        function filterTasks(filter) {
+            currentFilter = filter;
+            displayTasks();
+        }
+    </script>
+
+</body>
+</html>

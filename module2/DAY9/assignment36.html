@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Selection Challenge</title>
+</head>
+<body>
+
+    <h1 id="mainHeading">Student Dashboard</h1>
+
+    <div class="container">
+        <h2 class="title">Student Information</h2>
+
+        <p id="studentName">Name: Muskan Gupta</p>
+        <p class="course">Course: BCA Artificial Intelligence</p>
+
+        <ul id="skills">
+            <li class="skill">Python</li>
+            <li class="skill">JavaScript</li>
+            <li class="skill">HTML</li>
+            <li class="skill">CSS</li>
+        </ul>
+
+        <button class="btn">Submit</button>
+        <button class="btn">Reset</button>
+    </div>
+
+    <script>
+        // Assignment 36: Element Selection
+
+        // 1. Select element by ID
+        const heading = document.getElementById("mainHeading");
+        console.log("By ID:", heading);
+
+        // 2. Select elements by class name
+        const buttons = document.getElementsByClassName("btn");
+        console.log("By Class:", buttons);
+
+        // 3. Select elements by tag name
+        const paragraphs = document.getElementsByTagName("p");
+        console.log("By Tag Name:", paragraphs);
+
+        // 4. Select first matching element
+        const title = document.querySelector(".title");
+        console.log("Query Selector:", title);
+
+        // 5. Select all matching elements
+        const skills = document.querySelectorAll(".skill");
+        console.log("Query Selector All:", skills);
+
+        // 6. Select first list item
+        const firstSkill = document.querySelector("#skills li");
+        console.log("First Skill:", firstSkill.textContent);
+
+        // 7. Select last list item
+        const allSkills = document.querySelectorAll("#skills li");
+        console.log("Last Skill:", allSkills[allSkills.length - 1].textContent);
+
+        // 8. Count all buttons
+        console.log("Total Buttons:", buttons.length);
+
+        // 9. Count all paragraphs
+        console.log("Total Paragraphs:", paragraphs.length);
+
+        // 10. Change heading text
+        heading.textContent = "Welcome to My Dashboard";
+
+        // 11. Change course text
+        document.querySelector(".course").textContent =
+            "Course: BCA (Artificial Intelligence)";
+
+        // 12. Change heading color
+        heading.style.color = "blue";
+
+        // 13. Display all skills
+        skills.forEach(function(skill) {
+            console.log("Skill:", skill.textContent);
+        });
+    </script>
+
+</body>
+</html>

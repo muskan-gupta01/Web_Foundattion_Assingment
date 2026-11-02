@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Content Updater</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+            padding: 30px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 25px;
+            max-width: 450px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: steelblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .profile {
+            background-color: aliceblue;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>My Profile</h1>
+
+        <div class="profile">
+            <h2 id="displayName">Muskan Gupta</h2>
+            <p id="displayCourse">BCA Artificial Intelligence</p>
+            <p id="displayBio">I am a college student interested in AI and Web Development.</p>
+        </div>
+
+        <h2>Update Profile</h2>
+
+        <input type="text" id="nameInput" placeholder="Enter your name">
+
+        <input type="text" id="courseInput" placeholder="Enter your course">
+
+        <textarea id="bioInput" placeholder="Enter your bio"></textarea>
+
+        <button id="updateBtn">Update Profile</button>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script>
+        // Select elements
+        const nameInput = document.getElementById("nameInput");
+        const courseInput = document.getElementById("courseInput");
+        const bioInput = document.getElementById("bioInput");
+
+        const displayName = document.getElementById("displayName");
+        const displayCourse = document.getElementById("displayCourse");
+        const displayBio = document.getElementById("displayBio");
+
+        const updateBtn = document.getElementById("updateBtn");
+        const message = document.getElementById("message");
+
+        // Update profile content
+        updateBtn.addEventListener("click", function() {
+
+            const name = nameInput.value.trim();
+            const course = courseInput.value.trim();
+            const bio = bioInput.value.trim();
+
+            if (name === "" || course === "" || bio === "") {
+                message.textContent = "Please fill all fields!";
+                message.style.color = "red";
+                return;
+            }
+
+            // Safely update content using textContent
+            displayName.textContent = name;
+            displayCourse.textContent = course;
+            displayBio.textContent = bio;
+
+            message.textContent = "Profile updated successfully!";
+            message.style.color = "green";
+
+            // Clear input fields
+            nameInput.value = "";
+            courseInput.value = "";
+            bioInput.value = "";
+        });
+    </script>
+
+</body>
+</html>

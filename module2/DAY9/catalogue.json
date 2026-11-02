@@ -1,0 +1,38 @@
+{
+    "storeName": "Muskan's Online Store",
+    "category": "Electronics",
+    "products": [
+        {
+            "id": 101,
+            "name": "Laptop",
+            "brand": "HP",
+            "price": 55000,
+            "quantity": 5,
+            "available": true
+        },
+        {
+            "id": 102,
+            "name": "Mouse",
+            "brand": "Dell",
+            "price": 500,
+            "quantity": 20,
+            "available": true
+        },
+        {
+            "id": 103,
+            "name": "Keyboard",
+            "brand": "Logitech",
+            "price": 1200,
+            "quantity": 10,
+            "available": true
+        },
+        {
+            "id": 104,
+            "name": "Monitor",
+            "brand": "Samsung",
+            "price": 12000,
+            "quantity": 0,
+            "available": false
+        }
+    ]
+}

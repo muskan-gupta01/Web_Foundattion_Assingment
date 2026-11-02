@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 39 - Event Delegation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: steelblue;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: navy;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Event Delegation Example</h2>
+
+        <p>Click any button below:</p>
+
+        <div id="buttonContainer">
+            <button data-name="HTML">HTML</button>
+            <button data-name="CSS">CSS</button>
+            <button data-name="JavaScript">JavaScript</button>
+        </div>
+
+        <p id="output">Your selection will appear here.</p>
+    </div>
+
+    <script>
+        const buttonContainer = document.getElementById("buttonContainer");
+        const output = document.getElementById("output");
+
+        buttonContainer.addEventListener("click", function(event) {
+
+            if (event.target.tagName === "BUTTON") {
+                const selectedValue = event.target.dataset.name;
+
+                output.textContent = "You selected: " + selectedValue;
+
+                console.log("Selected:", selectedValue);
+            }
+
+        });
+
+        // Dynamically adding a new button
+        const newButton = document.createElement("button");
+
+        newButton.textContent = "Python";
+        newButton.dataset.name = "Python";
+
+        buttonContainer.appendChild(newButton);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 42 - Contact Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            background-color: steelblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #summary {
+            display: none;
+            background-color: #e8f5e9;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Contact Us</h2>
+
+        <form id="contactForm">
+
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label>Message:</label>
+            <textarea id="message" placeholder="Write your message"></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <div id="summary">
+            <h3>Submission Summary</h3>
+            <p id="showName"></p>
+            <p id="showEmail"></p>
+            <p id="showMessage"></p>
+        </div>
+
+    </div>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill all the fields.");
+                return;
+            }
+
+            document.getElementById("showName").textContent =
+                "Name: " + name;
+
+            document.getElementById("showEmail").textContent =
+                "Email: " + email;
+
+            document.getElementById("showMessage").textContent =
+                "Message: " + message;
+
+            document.getElementById("summary").style.display = "block";
+
+            console.log("Contact Form Submitted Successfully");
+            console.log("Name:", name);
+            console.log("Email:", email);
+            console.log("Message:", message);
+
+            contactForm.reset();
+        });
+    </script>
+
+</body>
+</html>
