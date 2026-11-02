@@ -1,66 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Study Planner</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
-        <h1>Student Study Planner</h1>
+        <div class="header-content">
+            <h1>Student Study Planner</h1>
 
-        <nav>
-            <a href="#dashboard">Dashboard</a>
-            <a href="#tasks">My Tasks</a>
-            <a href="#about">About</a>
-        </nav>
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#tasks">My Tasks</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
     </header>
 
     <main>
 
+        <!-- Dashboard -->
         <section id="dashboard">
-            <h2>Welcome to Your Study Planner!</h2>
-            <p>Organize your studies and manage your daily tasks.</p>
+            <h2>My Dashboard</h2>
+            <p class="section-description">
+                Manage your daily study activities in one place.
+            </p>
 
             <div class="stats">
-                <div class="card">
+
+                <div class="stat-card">
                     <h3>Total Tasks</h3>
                     <p id="totalTasks">0</p>
                 </div>
 
-                <div class="card">
+                <div class="stat-card">
                     <h3>Pending Tasks</h3>
                     <p id="pendingTasks">0</p>
                 </div>
 
-                <div class="card">
+                <div class="stat-card">
                     <h3>Completed Tasks</h3>
                     <p id="completedTasks">0</p>
                 </div>
+
             </div>
         </section>
 
+        <!-- Task Management -->
         <section id="tasks">
-            <h2>My Tasks</h2>
-            <p>Your study tasks will appear here.</p>
+
+            <h2>Manage Your Tasks</h2>
+            <p class="section-description">
+                Add and organize your study tasks.
+            </p>
+
+            <form id="taskForm">
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Enter task title"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="taskSubject"
+                    placeholder="Enter subject"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="taskDate"
+                    required
+                >
+
+                <button type="submit" class="add-btn">
+                    + Add Task
+                </button>
+
+            </form>
+
+            <!-- Task List -->
+            <div id="taskList">
+                <p class="empty-message">No tasks added yet.</p>
+            </div>
+
         </section>
 
+        <!-- About -->
         <section id="about">
-            <h2>About Project</h2>
+
+            <h2>About Student Study Planner</h2>
+
             <p>
-                Student Study Planner is a web application
-                that helps students manage their daily
-                study activities and assignments.
+                Student Study Planner is a simple web application
+                designed to help students organize their daily study
+                activities. Users can add, edit, complete and delete
+                tasks easily.
             </p>
+
         </section>
 
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>Student Study Planner | 2026</p>
+        <p>Student Study Planner | Created by Muskan Gupta</p>
     </footer>
 
     <script src="script.js"></script>

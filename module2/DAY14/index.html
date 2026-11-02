@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Student Study Planner</h1>
+
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#tasks">My Tasks</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="dashboard">
+            <h2>My Dashboard</h2>
+            <p class="description">Track and manage your study activities.</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Tasks</h3>
+                    <p id="totalTasks">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending Tasks</h3>
+                    <p id="pendingTasks">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Completed Tasks</h3>
+                    <p id="completedTasks">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tasks">
+            <h2>Manage Your Tasks</h2>
+            <p class="description">Add and organize your study tasks.</p>
+
+            <form id="taskForm">
+                <input type="text" id="taskTitle"
+                    placeholder="Enter task title" required>
+
+                <input type="text" id="taskSubject"
+                    placeholder="Enter subject" required>
+
+                <input type="date" id="taskDate" required>
+
+                <button type="submit" id="submitBtn">Add Task</button>
+            </form>
+
+            <div class="filter-section">
+                <label for="taskFilter">Filter Tasks:</label>
+
+                <select id="taskFilter">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div id="taskList">
+                <p class="empty-message">No tasks added yet.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Student Study Planner</h2>
+
+            <p>
+                Student Study Planner helps students organize their
+                daily academic activities. Users can add, edit,
+                complete, delete and filter their study tasks.
+                Tasks are saved in browser storage.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Study Planner | Created by Muskan Gupta</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
